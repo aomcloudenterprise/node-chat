@@ -1,0 +1,239 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    background: #efebe9;
+    font-family: 'Comfortaa';
+}
+ul, p {
+    padding: 0;
+    margin: 0;
+}
+.input-field input[type=text]:focus:not(.browser-default) + label {
+    color: #afb42b;
+}
+.input-field input[type=text]:focus:not(.browser-default) {
+    border-bottom: 1px solid  #afb42b;
+    box-shadow: 0 1px 0 0  #afb42b;
+}
+.login {
+    max-width: 600px;
+    height: 90vh;
+    min-height: 360px;
+    max-height: 550px;
+    margin: 5vh auto;
+    text-align: center;
+}
+.login__header {
+    margin-bottom: 50px;
+    text-align: center;
+    font-size: 28px;
+    font-weight: 600;
+}
+.input-field {
+    margin-top: 30px;
+}
+.input-field.inline .login__nick {
+    margin: 20px 0;
+    height: 20px;
+}
+.input-field .login__label {
+    top: 6px;
+}
+.login__error {
+    width: 100%;
+    height: 20px;
+    padding: 5px;
+    text-align: center;
+    font-size: 10px;
+    color: red;
+}
+.login__button {
+    margin: 40px 5px;
+}
+.chat {
+    max-width: 800px;
+    height: 90vh;
+    min-height: 360px;
+    max-height: 550px;
+    margin: 5vh auto;
+    overflow: hidden;
+    display: none;
+    position: relative;
+}
+.chat__header {
+    margin: 0;
+    font-size: 16px;
+}
+.chat__wrapper {
+    width: 100%;
+    height: 95%;
+    margin-top: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.chat__window {
+    width: 75%;
+    height: 80%;
+    overflow-y: auto;
+    background: #f9f9f9;
+}
+.message {
+    width: 100%;
+    min-height: 10px;
+    padding: 5px;
+    font-size: 10px;
+    display: flex;
+}
+.message--system {
+    color: #29b6f6;
+}
+.message__nick {
+    max-width: 24%;
+    font-weight: 600;
+}
+.message__content {
+    width: 100%;
+    padding-left: 12px;
+}
+.message__time {
+    padding: 2px;
+    font-size: 8px;
+}
+.chat__users {
+    width: 25%;
+    height: 80%;
+    background: #fff;
+    border: 1px solid #bdbdbd;
+    border-top: none;
+    z-index: 999;
+}
+.users__header {
+    height: 10%;
+    margin: 0;
+    padding: 12px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 12px;
+    color: #424242;
+    background: #d4e157;
+    position: relative;
+}
+.users__list {
+    max-height: 90%;
+    font-size: 12px;
+    font-family: 'Comfortaa';
+    overflow-y: auto;
+}
+.user {
+    height: 30px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 2px;
+}
+.user--active {
+    color: #ff9800;
+}
+.user__emoji {
+    transform: scale(0.8);
+}
+.user__name {
+    margin-left: 5px;
+}
+.chat__users-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: none;
+}
+.chat__form {
+    width: 70%;
+    height: 20%;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.new-message {
+    width: 85%;
+    height: 30px;
+    margin: 0;
+    line-height: 2;
+    resize: none;
+    border: none;
+    border-bottom: 1px solid #bdbdbd;
+}
+.new-message:focus + label {
+    color: #afb42b;
+}
+.new-message:focus {
+    border-bottom: 1px solid  #afb42b;
+    box-shadow: 0 1px 0 0  #afb42b;
+}
+.new-message:focus + .new-message__submit {
+    color: #c0ca33;
+}
+.new-message__label {
+    margin-top: -6px;
+}
+.new-message__submit {
+    width: 10%;
+    margin-right: 30px;
+    padding: 0;
+    border: 1px solid transparent;
+    background: transparent;
+    color: #bdbdbd;
+    transition: .3s;
+    text-align: center;
+}
+.new-message__submit:hover {
+    transform: translateX(5px);
+}
+.new-message__submit:focus {
+    background: transparent;
+    transform: scale(1.2);
+}
+
+@media all and (max-width: 670px) {
+    .users__header {
+        height: 15%;
+        padding: 8px 20%;
+    }
+}
+@media all and (max-width: 590px) {
+    .login, .chat {
+        height: 100vh;
+        margin: 0;
+    }
+}
+@media all and (max-width: 550px) {
+    .chat__window, .chat__form {
+        width: 100%;
+    }
+    .chat__users {
+        width: 180px;
+        height: 100vh;
+        min-height: 360px;
+        max-height: 550px;
+        position: absolute;
+        top: 0px;
+        right: 0px;
+    }
+    .users__header {
+        height: 40px;
+        padding: 15px 10px;
+    }
+    .chat__users-btn {
+        display: block;
+    }
+}
+
+@media all and (max-height: 420px) {
+    .login__button {
+        margin: 10px 0;
+    }
+}

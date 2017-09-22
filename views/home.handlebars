@@ -1,0 +1,58 @@
+
+    <div class="login card-panel">
+        <h1 class="login__header card-title"> Node.js Chat </h1>
+        <form class="login__form">
+            <div class="input-field inline">
+                <input class="login__nick" type="text" id="nick">
+                <label class="login__label text-lime" for="nick"> nick </label>
+            </div>
+            <p class="login__error"></p>
+            <button class="login__button btn lime darken-1 waves-effect waves-light" type="submit"> <i class="material-icons right">navigate_next</i> Go! </button>
+        </form>
+    </div>
+
+    <div class="chat card-panel">
+        <h1 class="chat__header card-title"> Node.js Chat </h1>
+        <div class="chat__wrapper">
+            <div class="chat__window">
+            </div>
+
+            <a href="#" data-activates="slide-out" class="chat__users-btn button-collapse"><i class="material-icons">menu</i></a>
+            <div class="chat__users users" id="slide-out">
+            </div>
+
+            <form class="chat__form">
+                <label class="new-message__label hide" for="new-message"> Message </label>
+                <textarea class="new-message" id="new-message" placeholder="message..."></textarea>
+                <button type="submit" class="new-message__submit"><i class="material-icons right">send</i></button>
+            </form>
+        </div>
+    </div>
+
+<script id="status-template" type="text/x-handlebars-template">
+    <div class="message message--system">
+        <p class="message__nick message__nick"> System </p>
+        <p class="message__content"> ----- \{{status}} ----- </p>
+        <p class="message__time"> \{{time}} </p>
+    </div>
+</script>
+
+<script id="message-template" type="text/x-handlebars-template">
+    <div class="message">
+        <p class="message__nick">\{{ nick }}</p>
+        <p class="message__content">\{{ message }}</p>
+        <p class="message__time">\{{ time }}</p>
+    </div>
+</script>
+
+<script id="users-template" type="text/x-handlebars-template">
+    <h2 class="users__header"> Online Users ( <span class="online-users"> \{{onlineUsers}} </span> ) : </h2>
+    <ul class="users__list">
+        \{{#each users}}
+        <li class="user">
+            <span class="user__emoji">\{{this.emoji}}</span>
+            <p class="user__name">\{{this.nick}} </p>
+        </li>
+        \{{/each}}
+    </ul>
+</script>
