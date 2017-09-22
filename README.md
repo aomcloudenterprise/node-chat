@@ -11,7 +11,7 @@ A real time chat application built with Node.js, Express.js and Soket.io.
 ## Running locally
 1. Make sure you have Node.js and npm installed.
 2. Clone or Download the repository
-````
+```
 $ git clone https://github.com/Noeemi/node-chat.git
 $ git cd node-chat
 ```
